@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latiankuis/models/movielist.dart';
 import 'package:latiankuis/screens/detailpage.dart';
+import 'package:latiankuis/screens/loginpage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,15 +9,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home Page")),
+      appBar: AppBar(
+        title: Text("Home Page"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LoginPage();
+                  },
+                ),
+                (route) => false,
+              );
+            },
+            icon: Icon(Icons.logout_outlined, color: Colors.red),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Text(
             'Daftar Film',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15,
-              color: const Color.fromARGB(255, 41, 15, 134),
+              fontSize: 20,
+              color: const Color.fromARGB(255, 148, 127, 222),
             ),
           ),
           Expanded(
@@ -55,7 +74,7 @@ class HomePage extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blueGrey.shade100,
+          color: const Color.fromARGB(255, 169, 7, 48),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Padding(
@@ -90,3 +109,34 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
+
+ // ini kalo pake listview
+//  Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text("Movie App - ListView")),
+//       body: ListView.builder(
+//         itemCount: movieList.length,
+//         itemBuilder: (context, index) {
+//           final movie = movieList[index];
+//           return Card(
+//             child: ListTile(
+//               leading: Image.network(movie.imgUrl, width: 60, fit: BoxFit.cover),
+//               title: Text(movie.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+//               subtitle: Text("Tahun: ${movie.year}"),
+//               onTap: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(
+//                     builder: (_) => DetailPage(index: index),
+//                   ),
+//                 );
+//               },
+//             ),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
