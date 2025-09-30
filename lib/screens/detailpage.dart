@@ -14,39 +14,59 @@ class DetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Table(
-            columnWidths: {
-              0: IntrinsicColumnWidth(),
-              1: FlexColumnWidth(),
-            },
+            columnWidths: {0: IntrinsicColumnWidth(), 1: FlexColumnWidth()},
             children: [
-              TableRow(children: [
-                Text('Judul', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].title}'),
-              ]),
-              TableRow(children: [
-                Text('Tahun', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].year}'),
-              ]),
-              TableRow(children: [
-                Text('Sinopsis', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].synopsis}'),
-              ]),
-              TableRow(children: [
-                Text('Genre', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].genre}'),
-              ]),
-              TableRow(children: [
-                Text('Sutradara', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].director}'),
-              ]),
-              TableRow(children: [
-                Text('Daftar Casts', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].casts}'),
-              ]),
-              TableRow(children: [
-                Text('Rating', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(': ${movieList[index].rating}'),
-              ])
+              TableRow(
+                children: [
+                  Text('Judul', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(': ${movieList[index].title}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text('Tahun', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(': ${movieList[index].year}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text(
+                    'Sinopsis',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(': ${movieList[index].synopsis}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text('Genre', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(': ${movieList[index].genre}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text(
+                    'Sutradara',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(': ${movieList[index].director}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text(
+                    'Daftar Casts',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(': ${movieList[index].casts}'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  Text('Rating', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(': ${movieList[index].rating}'),
+                ],
+              ),
             ],
           ),
           TextButton(

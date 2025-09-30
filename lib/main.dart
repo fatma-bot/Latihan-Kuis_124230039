@@ -10,8 +10,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LoginPage(),
-    );
+    return const MaterialApp(home: LoginPage());
   }
 }
+
+// git init
+// git remote add origin https//
+// git add .
+// git commit -m "first commit"
+// git push -u origin main
