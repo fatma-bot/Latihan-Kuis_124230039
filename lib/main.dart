@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.dark, // ini buat ngatur mode gelap
       ),
     );
   }

@@ -12,6 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   final usernameC = TextEditingController();
   final passwordC = TextEditingController();
   bool isloginsuccess = false;
+  bool _obscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +32,9 @@ class _LoginPageState extends State<LoginPage> {
         enabled: true,
         controller: usernameC,
         decoration: InputDecoration(
-          hintText: 'Input username',
+          labelText: 'Username',
           hintStyle: TextStyle(color: Colors.white),
-          fillColor: Colors.blue.shade400,
+          fillColor: const Color.fromARGB(255, 125, 3, 44),
           filled: true,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -48,15 +49,24 @@ class _LoginPageState extends State<LoginPage> {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: TextFormField(
         enabled: true,
-        obscureText: true,
+        obscureText: _obscure,
         controller: passwordC,
         decoration: InputDecoration(
-          hintText: 'Input Password',
+          labelText: 'Password',
           hintStyle: TextStyle(color: Colors.white),
-          fillColor: Colors.blue.shade400,
+          fillColor: const Color.fromARGB(255, 125, 3, 44),
           filled: true,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(50)),
+          ),
+          suffixIcon: IconButton(
+            onPressed: () {
+              setState(() {
+                _obscure = !_obscure;
+              });
+            },
+            icon: Icon(_obscure ? Icons.visibility_off : Icons.visibility),
+            tooltip: _obscure ? 'Tampilkan password' : 'sembunyikan password',
           ),
         ),
       ),
@@ -75,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Text(
           'Login',
           style: TextStyle(
-            color: Colors.blue.shade400,
+            color: const Color.fromARGB(255, 125, 3, 44),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
